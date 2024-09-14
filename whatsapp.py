@@ -4,12 +4,12 @@ from twilio.rest import Client
 import datetime
 
 # Twilio credentials (replace with your own credentials)
-account_sid = 'your_account_sid'
-auth_token = 'your_auth_token'
-twilio_whatsapp_number = 'whatsapp:+your_twilio_number'  # Your Twilio WhatsApp number
+account_sid = 'AC2efdb7e7217bcf31792e413dda3bc2fb'
+auth_token = 'b8cf6530677827adafcd5256b68f41eb'
+twilio_whatsapp_number = 'whatsapp:+14155238886'  # Your Twilio WhatsApp number
 
 # WhatsApp number of your friend for testing
-friend_whatsapp_number = 'whatsapp:+friend_whatsapp_number'
+friend_whatsapp_number = 'whatsapp:+528119046392'
 
 # Initialize Twilio Client
 client = Client(account_sid, auth_token)
@@ -42,8 +42,8 @@ def send_test_alert(location, severity, injuries, car_plate):
         # Send WhatsApp message to your friend's number
         message = client.messages.create(
             body=message_body,
-            from_=twilio_whatsapp_number,
-            to=friend_whatsapp_number
+            from_="whatsapp:+14155238886",
+            to="whatsapp:+528119046392"
         )
         
         print(f"Test WhatsApp message sent successfully. Message SID: {message.sid}")
